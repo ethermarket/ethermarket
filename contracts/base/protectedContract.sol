@@ -1,6 +1,3 @@
-// #include_once "base/permissions.sol"
-// #include_once "base/ownedApiEnabled.sol"
-
 contract ProtectedContract is OwnedApiEnabled, PermissionsEnabled {
     function apiAuthorized() returns (bool result) {
         return super.apiAuthorized() || permittedSender();

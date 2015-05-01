@@ -1,6 +1,3 @@
-// #include_once "base/owned.sol"
-// #include_once "base/api.sol"
-
 contract OwnedApiEnabled is Owned, ApiEnabled {
     address api;
 

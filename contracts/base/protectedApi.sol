@@ -1,6 +1,3 @@
-// #include_once "base/api.sol"
-// #include_once "base/permissions.sol"
-
 contract ProtectedApi is ApiProvider, PermissionsEnabled {
     // PoC-8
 

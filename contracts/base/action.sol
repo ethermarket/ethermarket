@@ -1,5 +1,3 @@
-// #include_once "base/owned.sol"
-
 contract Action is Owned {
     function execute() {
         if (msg.sender != owner) return;
