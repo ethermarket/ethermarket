@@ -13,6 +13,7 @@ module.exports = (grunt) ->
       js:
         vendor: [
           "js/lib/jquery.min.js"
+          "js/lib/bootstrap.min.js"
           "js/lib/underscore.js"
           "js/lib/json2.js"
           "js/lib/backbone.js"
