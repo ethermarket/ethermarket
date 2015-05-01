@@ -28,7 +28,7 @@ module.exports = (grunt) ->
 
       css:
         src: [
-          "stylesheets/lib/bootstrap.min.css"
+          "css/lib/bootstrap.min.css"
         ]
       html:
         src: "index.html"
