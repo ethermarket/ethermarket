@@ -30,6 +30,7 @@ module.exports = (grunt) ->
         src: [
           "css/lib/bootstrap.min.css"
         ]
+
       html:
         src: "index.html"
 
@@ -38,6 +39,23 @@ module.exports = (grunt) ->
         compiled: [
           "generated/dapp/compiled-coffee/app.js"
           "generated/dapp/compiled-coffee/**/*.js"
+        ]
+
+      contracts:
+        product: [
+          "contracts/ethermarket.sol"
+        ]
+
+        democracy: [
+          "contracts/base/owned.sol"
+          "contracts/base/action.sol"
+          "contracts/base/api.sol"
+          "contracts/base/ownedApiEnabled.sol"
+          "contracts/base/permissions.sol"
+          "contracts/base/persistentProtectedContract.sol"
+          "contracts/base/permissionsProviderProperty.sol"
+          "contracts/base/protectedContract.sol"
+          "contracts/base/protectedApi.sol"
         ]
 
     coffee:
@@ -55,6 +73,10 @@ module.exports = (grunt) ->
       css:
         src: "<%= files.css.src %>"
         dest: "generated/dapp/css/app.min.css"
+      contracts:
+        files:
+          "generated/contracts/democracy.sol": '<%= files.contracts.democracy %>'
+          "generated/contracts/ethermarket.sol": '<%= files.contracts.product %>'
 
     watch:
       options:
