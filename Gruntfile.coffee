@@ -34,10 +34,10 @@ module.exports = (grunt) ->
         src: "index.html"
 
       coffee:
-        dest: "generated/compiled-coffee"
+        dest: "generated/dapp/compiled-coffee"
         compiled: [
-          "generated/compiled-coffee/app.js"
-          "generated/compiled-coffee/**/*.js"
+          "generated/dapp/compiled-coffee/app.js"
+          "generated/dapp/compiled-coffee/**/*.js"
         ]
 
     coffee:
@@ -51,10 +51,10 @@ module.exports = (grunt) ->
     concat:
       app:
         src: ["<%= files.js.vendor %>", "<%= files.coffee.compiled %>"]
-        dest: "generated/js/app.min.js"
+        dest: "generated/dapp/js/app.min.js"
       css:
         src: "<%= files.css.src %>"
-        dest: "generated/css/app.min.css"
+        dest: "generated/dapp/css/app.min.css"
 
     watch:
       options:
@@ -79,11 +79,11 @@ module.exports = (grunt) ->
     copy:
       html:
         files:
-          "generated/index.html" : "<%= files.html.src %>"
-          "dist/index.html"      : "<%= files.html.src %>"
+          "generated/dapp/index.html" : "<%= files.html.src %>"
+          "dist/dapp/index.html"      : "<%= files.html.src %>"
 
     server:
-      base: "#{process.env.SERVER_BASE || 'generated'}"
+      base: "#{process.env.SERVER_BASE || 'generated/dapp'}"
       web:
         port: 8000
 
@@ -97,7 +97,7 @@ module.exports = (grunt) ->
 
       dist:
         src: "<%= concat.app.dest %>" # input from the concat process
-        dest: "dist/js/app.min.js"
+        dest: "dist/dapp/js/app.min.js"
 
     clean:
       workspaces: ["dist", "generated"]
