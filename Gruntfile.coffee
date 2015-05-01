@@ -103,6 +103,13 @@ module.exports = (grunt) ->
         files:
           "generated/dapp/index.html" : "<%= files.html.src %>"
           "dist/dapp/index.html"      : "<%= files.html.src %>"
+      css:
+        files:
+          "dist/dapp/css/app.min.css" : "<%= files.css.src %>"
+      contracts:
+        files:
+          "dist/contracts/democracy.sol": '<%= files.contracts.democracy %>'
+          "dist/contracts/ethermarket.sol": '<%= files.contracts.product %>'
 
     server:
       base: "#{process.env.SERVER_BASE || 'generated/dapp'}"
